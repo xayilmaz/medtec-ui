@@ -1,6 +1,6 @@
 {
   "name": "medtec-ui",
-  "version": "1.0.1",
+  "version": "1.0.9",
   "description": "React Native Medtec Components",
   "main": "index.js",
   "scripts": {

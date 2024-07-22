@@ -46,3 +46,40 @@ function App() {
 ## Screenshots
 
 ![Button Screenshots](images/buttonImage.png)
+
+---
+
+## MedLoading Usage/Examples
+
+```javascript
+import { MedLoading } from 'med-ui'
+
+function App() {
+  return  <MedLoading
+            blurType={"light"}
+            reducedTransparencyFallbackColor={"white"}
+            source={require('@assets/lottie/loadingYellow.json')}
+            backgroundColor={`rgb(40, 47, 68)`}
+        />
+}
+```
+
+
+## Props
+
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `style`      | `object` | Style of loading view. |
+| `source`      | `string` | The source of animation. "dark", "light" and "xlight" |
+| `blurType`      | `string` | See blurType below. |
+| `blurViewStyle`      | `object` | Style of blurView. |
+| `lottieViewStyle`      | `object` | Border color of button. |
+| `backgroundColor`      | `string` | Background color of view. |
+| `lottieViewContainerStyle`      | `object` | Style of lottie's view. |
+| `reducedTransparencyFallbackColor`      | `string` | It is used as a background color instead of blurring. IOS only.|
+
+## Screenshots
+
+![Button Screenshots](images/loadingImage.png)
+
