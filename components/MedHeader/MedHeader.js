@@ -123,7 +123,7 @@ const MedHeader = ({
                                 <TouchableOpacity
                                     style={{ zIndex: 15 }}
                                     onPress={rigthIconOnPress}
-                                    disabled={!rightIconActivity}
+                                    disabled={rightIconActivity}
                                     hitSlop={{ top: 25, bottom: 25, left: 25, right: 25 }}
                                 >
                                     {rightIcon}
