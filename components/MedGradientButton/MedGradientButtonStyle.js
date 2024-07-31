@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     },
     buttonBackground: {
         height: 50,
-        borderRadius: 12,
+        borderRadius: 8,
         alignItems: "center",
         justifyContent: "center"
     }

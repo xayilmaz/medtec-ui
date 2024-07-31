@@ -83,3 +83,66 @@ function App() {
 
 ![Button Screenshots](images/loadingImage.png)
 
+---
+## MedHeader Usage/Examples
+
+## Before Usage
+```bash
+  npm i react-native-svg
+  npm i react-native-svg-transformer
+```
+Add to metro.config.js
+```javascript
+const defaultConfig = getDefaultConfig(__dirname);
+const { assetExts, sourceExts } = defaultConfig.resolver;
+
+const config = {
+    transformer: {
+      babelTransformerPath: require.resolve("react-native-svg-transformer")
+    },
+    resolver: {
+      assetExts: assetExts.filter((ext) => ext !== "svg"),
+      sourceExts: [...sourceExts, "svg"]
+    }
+  };
+```
+
+```javascript
+import { MedHeader } from 'med-ui'
+
+function App() {
+  return  <MedHeader
+            rightButtonText={"Save"}
+            title={"Language"}
+            textColor={"white"}
+            saveButtonOnPress={saveButtonOnPress}
+            saveButtonActivity={isDisable}
+        />
+}
+```
+
+## Props
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `title`      | `string` | Center title. |
+| `titleFontSize`      | `number` | Font size of title. Defaults to 20. |
+| `isLoading`      | `boolean` | The loading state of the save button. |
+| `rightIcon`      | `object` | The icon on the right side of the header.  |
+| `rigthIconOnPress`      | `function` | Right icon press function. |
+| `rigthIconOnActivity`      | `boolean` | Right icon press activity. |
+| `rightButtonText`      | `string` | Right button text. |
+| `rightButtonOnPress`      | `function` | Right button press function. |
+| `rightButtonActivity`      | `boolean` | Right button press activity.|
+| `rightButtonFontSize`      | `number` | Right button font size. Defaults to 14|
+| `customGoBackEvent`      | `function` | Custom go back navigation activity.|
+| `goBackActive`      | `boolean` | Screen allows to go back. Defaults to true|
+| `customHeaderContainerStyle`      | `object` | Header container style. |
+| `textFontFamily`      | `string` | Header text font family.|
+| `textColor`      | `string` | Header text font color.|
+
+## Screenshots
+
+![Button Screenshots](images/headerImage.png)
+
+

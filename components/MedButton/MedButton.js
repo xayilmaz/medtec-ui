@@ -31,13 +31,11 @@ export default function MedButton({
                     backgroundColor: backgroundColor
                 },
                 style,
-
                 styles.buttonBackground,
-
             ]}
             onPress={onPress}
-            activeOpacity={activeOpacity}
             disabled={disabled}
+            activeOpacity={activeOpacity}
         >
 
             <Text
