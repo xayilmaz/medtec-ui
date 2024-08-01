@@ -5,7 +5,6 @@ import { styles } from './MedGradientButtonStyle'
 
 // Components
 import { TouchableOpacity, Text } from 'react-native'
-
 import LinearGradient from 'react-native-linear-gradient'
 
 export default function MedGradientButton({
@@ -15,7 +14,6 @@ export default function MedGradientButton({
     disabled,
     borderColor,
     borderWidth,
-    backgroundColor,
     textColor,
     fontSize = 16,
     textOpacity,
@@ -35,7 +33,7 @@ export default function MedGradientButton({
             colors={colorArray}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
-            style={{ borderRadius: 12 }}
+            style={[{ borderRadius: 12 }, style]}
 
         >
             <TouchableOpacity
@@ -45,13 +43,13 @@ export default function MedGradientButton({
                         borderWidth: borderWidth,
                         backgroundColor: "transparent",
                     },
-                    style,
+
                     styles.buttonBackground,
                 ]}
                 onPress={onPress}
                 disabled={disabled}
                 activeOpacity={activeOpacity}
-                >
+            >
 
                 <Text
                     maxFontSizeMultiplier={1}

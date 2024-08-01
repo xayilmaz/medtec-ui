@@ -6,6 +6,32 @@ Install medtec-ui with npm
 ```bash
   npm install medtec-ui
 ```
+
+## Before Usage You Must Be Added To Package.json
+
+```bash
+    "@react-native-community/blur": "4.4.0",
+    "lottie-react-native": "6.7.2",
+    "react-native-linear-gradient": "2.8.3",
+    "react-native-svg": "15.3.0",
+    "react-native-svg-transformer": "1.4.0",
+```
+And add to metro.config.js
+```javascript
+const defaultConfig = getDefaultConfig(__dirname);
+const { assetExts, sourceExts } = defaultConfig.resolver;
+
+const config = {
+    transformer: {
+      babelTransformerPath: require.resolve("react-native-svg-transformer")
+    },
+    resolver: {
+      assetExts: assetExts.filter((ext) => ext !== "svg"),
+      sourceExts: [...sourceExts, "svg"]
+    }
+  };
+```
+
 ---
 ## MedButton Usage/Examples
 
@@ -14,18 +40,16 @@ import { MedButton } from 'medtec-ui'
 
 function App() {
   return  <Medutton
-              text={"Login"}
-              onPress={onPress}
-              textColor={"black"}
-              style={{ margin: 15 }}
-              backgroundColor={"#EED484"}
-          />
+            text={"Login"}
+            onPress={onPress}
+            textColor={"black"}
+            style={{ margin: 15 }}
+            backgroundColor={"#EED484"}
+            />
 }
 ```
 
-
 ## Props
-
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
@@ -60,13 +84,11 @@ function App() {
             reducedTransparencyFallbackColor={"white"}
             source={require('@assets/lottie/loadingYellow.json')}
             backgroundColor={`rgb(40, 47, 68)`}
-        />
+            />
 }
 ```
 
-
 ## Props
-
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
@@ -85,27 +107,6 @@ function App() {
 
 ---
 ## MedHeader Usage/Examples
-
-## Before Usage
-```bash
-  npm i react-native-svg
-  npm i react-native-svg-transformer
-```
-Add to metro.config.js
-```javascript
-const defaultConfig = getDefaultConfig(__dirname);
-const { assetExts, sourceExts } = defaultConfig.resolver;
-
-const config = {
-    transformer: {
-      babelTransformerPath: require.resolve("react-native-svg-transformer")
-    },
-    resolver: {
-      assetExts: assetExts.filter((ext) => ext !== "svg"),
-      sourceExts: [...sourceExts, "svg"]
-    }
-  };
-```
 
 ```javascript
 import { MedHeader } from 'med-ui'

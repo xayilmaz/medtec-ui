@@ -3,9 +3,6 @@ import { useRef, memo } from 'react'
 // Style
 import { styles } from './MedHeaderStyle'
 
-// Navigation
-import { useNavigation } from '@react-navigation/native'
-
 // Assets
 import { ArrowLeftOutline } from '../../icons/index'
 
@@ -27,10 +24,9 @@ const MedHeader = ({
     goBackActive = true,
     customHeaderContainerStyle,
     textFontFamily = "Poppins-Medium",
-    textColor
+    textColor,
+    navigation
 }) => {
-
-    const navigation = useNavigation()
 
     const buttonEnableRef = useRef(false)
 
