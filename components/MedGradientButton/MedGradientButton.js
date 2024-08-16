@@ -33,7 +33,7 @@ export default function MedGradientButton({
             colors={colorArray}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
-            style={[{ borderRadius: 12 }, style]}
+            style={[{ borderRadius: 12, alignItem: "center", justifyContent: "center" }, style]}
 
         >
             <TouchableOpacity
